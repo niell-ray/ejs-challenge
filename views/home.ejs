@@ -1,0 +1,18 @@
+<%- include("layouts/header") -%>
+
+    <h1>Home</h1>
+    <p><%= home%> </p>
+    <%  posts.forEach(function(post){ %>
+    <%  var title = post.title; %>
+    <%  var link = "/post/" + title %>
+
+      <h1> <%= post.title %></h1>
+    <p>
+      <%= post.content.substring(0,100) + "..." %>
+      <a href="/post/<%=title%>">Read More</a>
+    </p>
+
+    <%  })  %>
+
+
+<%- include("layouts/footer") -%>
